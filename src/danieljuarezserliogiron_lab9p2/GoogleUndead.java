@@ -27,17 +27,62 @@ public class GoogleUndead extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        LinkProgressBar = new javax.swing.JProgressBar();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        MenuBar = new javax.swing.JMenuBar();
+        Archivos = new javax.swing.JMenu();
+        MiUnidad = new javax.swing.JMenuItem();
+        Destacados = new javax.swing.JMenuItem();
+        Papelera = new javax.swing.JMenuItem();
+        Agregar = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "testing" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        Archivos.setText("Archivos");
+
+        MiUnidad.setText("Mi Unidad");
+        Archivos.add(MiUnidad);
+
+        Destacados.setText("Destacados");
+        Archivos.add(Destacados);
+
+        Papelera.setText("Papelera");
+        Archivos.add(Papelera);
+
+        Agregar.setText("Agregar");
+        Archivos.add(Agregar);
+
+        MenuBar.add(Archivos);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(LinkProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LinkProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +124,14 @@ public class GoogleUndead extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Agregar;
+    private javax.swing.JMenu Archivos;
+    private javax.swing.JMenuItem Destacados;
+    private javax.swing.JProgressBar LinkProgressBar;
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JMenuItem MiUnidad;
+    private javax.swing.JMenuItem Papelera;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
