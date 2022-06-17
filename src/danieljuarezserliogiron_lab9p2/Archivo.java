@@ -1,5 +1,7 @@
 package danieljuarezserliogiron_lab9p2;
 
+import java.util.Date;
+
 public class Archivo {
     
     //Tendrán un nombre, un link, una extensión (pdf, txt, docx, jpg, mp4) y tamaño.
@@ -8,15 +10,19 @@ public class Archivo {
     public String Link;
     public String Extension;
     public int Tamano;
+    public Date FechaCreacion;
+    public boolean Pertenece;
 
     public Archivo() {
     }
 
-    public Archivo(String Nombre, String Link, String Extension, int Tamano) {
+    public Archivo(String Nombre, String Link, String Extension, int Tamano, Date FechaCreacion, boolean Pertenece) {
         this.Nombre = Nombre;
         this.Link = Link;
         this.Extension = Extension;
         this.Tamano = Tamano;
+        this.FechaCreacion = FechaCreacion;
+        this.Pertenece = Pertenece;
     }
 
     public String getNombre() {
@@ -49,6 +55,22 @@ public class Archivo {
 
     public void setTamano(int Tamano) {
         this.Tamano = Tamano;
+    }
+
+    public Date getFechaCreacion() {
+        return FechaCreacion;
+    }
+
+    public void setFechaCreacion(Date FechaCreacion) {
+        this.FechaCreacion = FechaCreacion;
+    }
+
+    public boolean isPertenece() {
+        return Pertenece;
+    }
+
+    public void setPertenece(boolean Pertenece) {
+        this.Pertenece = Pertenece;
     }
 
     @Override
