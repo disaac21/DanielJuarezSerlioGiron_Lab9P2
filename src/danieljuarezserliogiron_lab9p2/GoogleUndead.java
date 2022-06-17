@@ -47,7 +47,7 @@ public class GoogleUndead extends javax.swing.JFrame {
         ExtensionLabel = new javax.swing.JLabel();
         ExtensionComboBox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        TamanoField = new javax.swing.JTextField();
         MB = new javax.swing.JLabel();
         CrearArchivoButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -145,7 +145,7 @@ public class GoogleUndead extends javax.swing.JFrame {
                                     .addGap(32, 32, 32)
                                     .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TamanoField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(MB))
                                         .addComponent(jLabel1)))
@@ -177,7 +177,7 @@ public class GoogleUndead extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TamanoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(MB))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                         .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -339,9 +339,43 @@ public class GoogleUndead extends javax.swing.JFrame {
     }//GEN-LAST:event_CrearCarpetaButtonMouseClicked
 
     private void CrearArchivoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearArchivoButtonMouseClicked
-        // TODO add your handling code here:
+        String nombre;
+        String extension;
+        int tamano;
+        boolean pertenece;
+        String link;
+        Date fecha = new Date();
+        
+        nombre= NombreArchivoTextField.getText();
+        extension = ExtensionComboBox.getSelectedItem().toString();
+        tamano = Integer.parseInt(TamanoField.getText());
+        
+        if (Checkbox_pertenece_a_carpeta.isSelected()) {
+            pertenece = true;
+        }else{
+            pertenece = false;
+        }
+        
+        link = CrearLink();
+        
+        Archivo archivo = new Archivo(nombre, link, extension, tamano, fecha, pertenece);
+        
+        AgregarBaseArchivo(archivo);
     }//GEN-LAST:event_CrearArchivoButtonMouseClicked
-
+    
+    
+    public String CrearLink(){
+        String Link = "dive.google.com/" + NombreCarpetaTextField.getText() + "/";
+        int cont = 0;
+        while (cont <= 5) {
+            int numero = 65 + random.nextInt(57);
+            Link = Link + (char)numero;
+            cont++;
+        }
+        
+        return Link;
+    }
+    
     private void Checkbox_pertenece_a_carpetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Checkbox_pertenece_a_carpetaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Checkbox_pertenece_a_carpetaActionPerformed
@@ -437,13 +471,13 @@ public class GoogleUndead extends javax.swing.JFrame {
     private javax.swing.JLabel NombreCarpetaLabel;
     private javax.swing.JTextField NombreCarpetaTextField;
     private javax.swing.JMenuItem Papelera;
+    private javax.swing.JTextField TamanoField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     String Opcion;
 }

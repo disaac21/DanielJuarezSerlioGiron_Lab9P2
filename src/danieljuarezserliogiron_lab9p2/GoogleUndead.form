@@ -72,7 +72,7 @@
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jTextField1" min="-2" pref="75" max="-2" attributes="0"/>
+                                              <Component id="TamanoField" min="-2" pref="75" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="MB" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -116,7 +116,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="ExtensionComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TamanoField" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="MB" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="6" max="32767" attributes="0"/>
@@ -165,7 +165,7 @@
             <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="TamanoField">
         </Component>
         <Component class="javax.swing.JLabel" name="MB">
           <Properties>
