@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  *
@@ -355,13 +356,20 @@ public class GoogleUndead extends javax.swing.JFrame {
         Dba db = new Dba("./Base.accdb");
         db.conectar();
         try {
-            int c;
-            String n;
-            c = Integer.parseInt(JOptionPane.showInputDialog("Codigo"));
-            n = JOptionPane.showInputDialog("Nombre");
-            db.query.execute("INSERT INTO alumnos"
-                    + " (cuenta,nombre)"
-                    + " VALUES ('" + c + "', '" + n + "')");
+            int peso;
+            String nombre;
+            Date fecha_creacion;
+            boolean pertenece;
+            
+            nombre = a.getNombre();
+            peso = a.getTamano();
+            fecha_creacion = a.getFechaCreacion();
+            pertenece = a.isPertenece();
+            
+            db.query.execute("INSERT INTO Archivos"
+                    + " (Nombre,Fecha de creacion,Pertenece a una carpeta,Peso)"
+                    + " VALUES ('" + nombre + "', '" + fecha_creacion + "', '" + pertenece + "', '" + peso + "')");
+            //+ " VALUES ('" + c + "', '" + n + "')");
             db.commit();
         } catch (SQLException ex) {
             ex.printStackTrace();
