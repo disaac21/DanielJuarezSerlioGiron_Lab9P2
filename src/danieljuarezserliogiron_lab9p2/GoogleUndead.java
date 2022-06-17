@@ -5,7 +5,11 @@
  */
 package danieljuarezserliogiron_lab9p2;
 
+import database.Dba;
 import java.util.Random;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -45,6 +49,8 @@ public class GoogleUndead extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         MB = new javax.swing.JLabel();
         CrearArchivoButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        Checkbox_pertenece_a_carpeta = new javax.swing.JCheckBox();
         LinkProgressBar = new javax.swing.JProgressBar();
         ListScrollPane = new javax.swing.JScrollPane();
         List = new javax.swing.JList<>();
@@ -105,7 +111,20 @@ public class GoogleUndead extends javax.swing.JFrame {
 
         MB.setText("MB");
 
-        CrearArchivoButton.setText("Crear Carpeta");
+        CrearArchivoButton.setText("Crear Archivo");
+        CrearArchivoButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearArchivoButtonMouseClicked(evt);
+            }
+        });
+
+        jLabel4.setText("Pertenece a alguna carpeta:");
+
+        Checkbox_pertenece_a_carpeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Checkbox_pertenece_a_carpetaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout CrearArchivoFrameLayout = new javax.swing.GroupLayout(CrearArchivoFrame.getContentPane());
         CrearArchivoFrame.getContentPane().setLayout(CrearArchivoFrameLayout);
@@ -113,42 +132,56 @@ public class GoogleUndead extends javax.swing.JFrame {
             CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(NombreArchivoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreArchivoLabel)
+                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
                         .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ExtensionLabel)
-                            .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(NombreArchivoLabel)
                             .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(MB)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(CrearArchivoButton)))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ExtensionLabel)
+                                    .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(MB)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Checkbox_pertenece_a_carpeta))
+                                    .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(65, 65, 65)
+                                        .addComponent(jLabel4)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(35, 35, 35))
+                    .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                        .addComponent(NombreArchivoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addComponent(CrearArchivoButton)
+                        .addGap(19, 19, 19))))
         );
         CrearArchivoFrameLayout.setVerticalGroup(
             CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(NombreArchivoLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NombreArchivoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NombreArchivoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CrearArchivoButton))
                 .addGap(18, 18, 18)
                 .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ExtensionLabel)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MB)
-                    .addComponent(CrearArchivoButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(MB))
+                    .addComponent(Checkbox_pertenece_a_carpeta))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -303,6 +336,39 @@ public class GoogleUndead extends javax.swing.JFrame {
 
     }//GEN-LAST:event_CrearCarpetaButtonMouseClicked
 
+    private void CrearArchivoButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearArchivoButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CrearArchivoButtonMouseClicked
+
+    private void Checkbox_pertenece_a_carpetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Checkbox_pertenece_a_carpetaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Checkbox_pertenece_a_carpetaActionPerformed
+    
+    
+    
+    public void AgregarBaseArchivo(Archivo a){
+        
+        //En la tabla de archivos, se almacenará: Nombre de
+//        archivo, peso, fecha de creación y si pertenece o no a una carpeta.
+        
+        Dba db = new Dba("./Base.accdb");
+        db.conectar();
+        try {
+            int c;
+            String n;
+            c = Integer.parseInt(JOptionPane.showInputDialog("Codigo"));
+            n = JOptionPane.showInputDialog("Nombre");
+            db.query.execute("INSERT INTO alumnos"
+                    + " (cuenta,nombre)"
+                    + " VALUES ('" + c + "', '" + n + "')");
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -343,6 +409,7 @@ public class GoogleUndead extends javax.swing.JFrame {
     private javax.swing.JMenuItem AgregarArchivo;
     private javax.swing.JMenuItem AgregarCarpeta;
     private javax.swing.JMenu Archivos;
+    private javax.swing.JCheckBox Checkbox_pertenece_a_carpeta;
     private javax.swing.JButton CrearArchivoButton;
     private javax.swing.JDialog CrearArchivoFrame;
     private javax.swing.JButton CrearCarpetaButton;
@@ -364,6 +431,7 @@ public class GoogleUndead extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JTextField jTextField1;
