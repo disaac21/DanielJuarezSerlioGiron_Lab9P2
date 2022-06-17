@@ -34,11 +34,13 @@ public class HiloLink extends Thread {
     @Override
     public void run() {
 
-        while (true) {            
+        while (true) {
             BarraLink.setString(Link);
-            
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
+            }
         }
-        
     }
 
 }

@@ -345,6 +345,7 @@ public class GoogleUndead extends javax.swing.JFrame {
         boolean pertenece;
         String link;
         Date fecha = new Date();
+        String fechacreacion = fecha.toString();
         
         nombre= NombreArchivoTextField.getText();
         extension = ExtensionComboBox.getSelectedItem().toString();
@@ -358,7 +359,7 @@ public class GoogleUndead extends javax.swing.JFrame {
         
         link = CrearLink();
         
-        Archivo archivo = new Archivo(nombre, link, extension, tamano, fecha, pertenece);
+        Archivo archivo = new Archivo(nombre, link, extension, tamano, fechacreacion, pertenece);
         
         AgregarBaseArchivo(archivo);
     }//GEN-LAST:event_CrearArchivoButtonMouseClicked
@@ -386,13 +387,15 @@ public class GoogleUndead extends javax.swing.JFrame {
         
         //En la tabla de archivos, se almacenará: Nombre de
 //        archivo, peso, fecha de creación y si pertenece o no a una carpeta.
-        
-        Dba db = new Dba("./Base.accdb");
+        String base = "./Base.accdb";
+        Dba db = new Dba(base);
         db.conectar();
         try {
             int peso;
             String nombre;
-            Date fecha_creacion;
+            String fecha_creacion = "";
+            String fechacreate= fecha_creacion.toString();
+            System.out.println(fechacreate);
             boolean pertenece;
             
             nombre = a.getNombre();

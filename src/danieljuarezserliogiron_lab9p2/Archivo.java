@@ -10,13 +10,13 @@ public class Archivo {
     public String Link;
     public String Extension;
     public int Tamano;
-    public Date FechaCreacion;
+    public String FechaCreacion;
     public boolean Pertenece;
 
     public Archivo() {
     }
 
-    public Archivo(String Nombre, String Link, String Extension, int Tamano, Date FechaCreacion, boolean Pertenece) {
+    public Archivo(String Nombre, String Link, String Extension, int Tamano, String FechaCreacion, boolean Pertenece) {
         this.Nombre = Nombre;
         this.Link = Link;
         this.Extension = Extension;
@@ -57,11 +57,11 @@ public class Archivo {
         this.Tamano = Tamano;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return FechaCreacion;
     }
 
-    public void setFechaCreacion(Date FechaCreacion) {
+    public void setFechaCreacion(String FechaCreacion) {
         this.FechaCreacion = FechaCreacion;
     }
 
