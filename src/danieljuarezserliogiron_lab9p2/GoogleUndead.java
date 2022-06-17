@@ -16,6 +16,7 @@ public class GoogleUndead extends javax.swing.JFrame {
      */
     public GoogleUndead() {
         initComponents();
+
     }
 
     /**
@@ -27,6 +28,19 @@ public class GoogleUndead extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        CrearCarpetaFrame = new javax.swing.JDialog();
+        NombreCarpetaLabel1 = new javax.swing.JLabel();
+        NombreCarpetaTextField1 = new javax.swing.JTextField();
+        CrearCarpetaButton1 = new javax.swing.JButton();
+        CrearArchivoFrame = new javax.swing.JDialog();
+        NombreArchivoLabel = new javax.swing.JLabel();
+        NombreArchivoTextField = new javax.swing.JTextField();
+        ExtensionLabel = new javax.swing.JLabel();
+        ExtensionComboBox = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        MB = new javax.swing.JLabel();
+        CrearArchivoButton = new javax.swing.JButton();
         LinkProgressBar = new javax.swing.JProgressBar();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -35,7 +49,94 @@ public class GoogleUndead extends javax.swing.JFrame {
         MiUnidad = new javax.swing.JMenuItem();
         Destacados = new javax.swing.JMenuItem();
         Papelera = new javax.swing.JMenuItem();
-        Agregar = new javax.swing.JMenuItem();
+        Agregar = new javax.swing.JMenu();
+        AgregarCarpeta = new javax.swing.JMenuItem();
+        AgregarArchivo = new javax.swing.JMenuItem();
+
+        NombreCarpetaLabel1.setText("Nombre de la Carpeta");
+
+        CrearCarpetaButton1.setText("Crear Carpeta");
+
+        javax.swing.GroupLayout CrearCarpetaFrameLayout = new javax.swing.GroupLayout(CrearCarpetaFrame.getContentPane());
+        CrearCarpetaFrame.getContentPane().setLayout(CrearCarpetaFrameLayout);
+        CrearCarpetaFrameLayout.setHorizontalGroup(
+            CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearCarpetaFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CrearCarpetaButton1)
+                    .addGroup(CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NombreCarpetaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NombreCarpetaLabel1)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        CrearCarpetaFrameLayout.setVerticalGroup(
+            CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearCarpetaFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NombreCarpetaLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(NombreCarpetaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(CrearCarpetaButton1)
+                .addContainerGap())
+        );
+
+        NombreArchivoLabel.setText("Nombre del Archivo");
+
+        ExtensionLabel.setText("Extensión");
+
+        ExtensionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".pdf", ".txt", ".docx", ".jpg", ".mp4" }));
+
+        jLabel1.setText("Tamaño");
+
+        MB.setText("MB");
+
+        CrearArchivoButton.setText("Crear Carpeta");
+
+        javax.swing.GroupLayout CrearArchivoFrameLayout = new javax.swing.GroupLayout(CrearArchivoFrame.getContentPane());
+        CrearArchivoFrame.getContentPane().setLayout(CrearArchivoFrameLayout);
+        CrearArchivoFrameLayout.setHorizontalGroup(
+            CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(NombreArchivoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NombreArchivoLabel)
+                    .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                        .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ExtensionLabel)
+                            .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(MB)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(CrearArchivoButton)))))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        CrearArchivoFrameLayout.setVerticalGroup(
+            CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearArchivoFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NombreArchivoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(NombreArchivoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ExtensionLabel)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CrearArchivoFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ExtensionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MB)
+                    .addComponent(CrearArchivoButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,17 +148,54 @@ public class GoogleUndead extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         Archivos.setText("Archivos");
+        Archivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ArchivosActionPerformed(evt);
+            }
+        });
 
         MiUnidad.setText("Mi Unidad");
+        MiUnidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MiUnidadActionPerformed(evt);
+            }
+        });
         Archivos.add(MiUnidad);
 
         Destacados.setText("Destacados");
+        Destacados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DestacadosActionPerformed(evt);
+            }
+        });
         Archivos.add(Destacados);
 
         Papelera.setText("Papelera");
+        Papelera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PapeleraActionPerformed(evt);
+            }
+        });
         Archivos.add(Papelera);
 
         Agregar.setText("Agregar");
+
+        AgregarCarpeta.setText("Carpeta");
+        AgregarCarpeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarCarpetaActionPerformed(evt);
+            }
+        });
+        Agregar.add(AgregarCarpeta);
+
+        AgregarArchivo.setText("Archivo");
+        AgregarArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarArchivoActionPerformed(evt);
+            }
+        });
+        Agregar.add(AgregarArchivo);
+
         Archivos.add(Agregar);
 
         MenuBar.add(Archivos);
@@ -87,6 +225,36 @@ public class GoogleUndead extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArchivosActionPerformed
+
+    }//GEN-LAST:event_ArchivosActionPerformed
+
+    private void MiUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiUnidadActionPerformed
+        Opcion = "Mi Unidad";
+    }//GEN-LAST:event_MiUnidadActionPerformed
+
+    private void DestacadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestacadosActionPerformed
+        Opcion = "Destacados";
+    }//GEN-LAST:event_DestacadosActionPerformed
+
+    private void PapeleraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PapeleraActionPerformed
+        Opcion = "Papelera";
+    }//GEN-LAST:event_PapeleraActionPerformed
+
+    private void AgregarCarpetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCarpetaActionPerformed
+        CrearCarpetaFrame.setModal(true);
+        CrearCarpetaFrame.pack();
+        CrearCarpetaFrame.setLocationRelativeTo(this);
+        CrearCarpetaFrame.setVisible(true);
+    }//GEN-LAST:event_AgregarCarpetaActionPerformed
+
+    private void AgregarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarArchivoActionPerformed
+        CrearArchivoFrame.setModal(true);
+        CrearArchivoFrame.pack();
+        CrearArchivoFrame.setLocationRelativeTo(this);
+        CrearArchivoFrame.setVisible(true);
+    }//GEN-LAST:event_AgregarArchivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,14 +292,30 @@ public class GoogleUndead extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Agregar;
+    private javax.swing.JMenu Agregar;
+    private javax.swing.JMenuItem AgregarArchivo;
+    private javax.swing.JMenuItem AgregarCarpeta;
     private javax.swing.JMenu Archivos;
+    private javax.swing.JButton CrearArchivoButton;
+    private javax.swing.JDialog CrearArchivoFrame;
+    private javax.swing.JButton CrearCarpetaButton1;
+    private javax.swing.JDialog CrearCarpetaFrame;
     private javax.swing.JMenuItem Destacados;
+    private javax.swing.JComboBox<String> ExtensionComboBox;
+    private javax.swing.JLabel ExtensionLabel;
     private javax.swing.JProgressBar LinkProgressBar;
+    private javax.swing.JLabel MB;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenuItem MiUnidad;
+    private javax.swing.JLabel NombreArchivoLabel;
+    private javax.swing.JTextField NombreArchivoTextField;
+    private javax.swing.JLabel NombreCarpetaLabel1;
+    private javax.swing.JTextField NombreCarpetaTextField1;
     private javax.swing.JMenuItem Papelera;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+    String Opcion;
 }
