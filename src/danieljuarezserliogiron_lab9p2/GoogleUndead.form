@@ -10,10 +10,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="CrearCarpetaButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="CrearCarpetaButton" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="NombreCarpetaTextField1" alignment="0" min="-2" pref="370" max="-2" attributes="0"/>
-                          <Component id="NombreCarpetaLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="NombreCarpetaTextField" alignment="0" min="-2" pref="370" max="-2" attributes="0"/>
+                          <Component id="NombreCarpetaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
@@ -24,28 +24,31 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="NombreCarpetaLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="NombreCarpetaLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="NombreCarpetaTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="NombreCarpetaTextField" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="10" max="32767" attributes="0"/>
-                  <Component id="CrearCarpetaButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="CrearCarpetaButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="NombreCarpetaLabel1">
+        <Component class="javax.swing.JLabel" name="NombreCarpetaLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nombre de la Carpeta"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NombreCarpetaTextField1">
+        <Component class="javax.swing.JTextField" name="NombreCarpetaTextField">
         </Component>
-        <Component class="javax.swing.JButton" name="CrearCarpetaButton1">
+        <Component class="javax.swing.JButton" name="CrearCarpetaButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear Carpeta"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CrearCarpetaButtonMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -29,9 +29,9 @@ public class GoogleUndead extends javax.swing.JFrame {
     private void initComponents() {
 
         CrearCarpetaFrame = new javax.swing.JDialog();
-        NombreCarpetaLabel1 = new javax.swing.JLabel();
-        NombreCarpetaTextField1 = new javax.swing.JTextField();
-        CrearCarpetaButton1 = new javax.swing.JButton();
+        NombreCarpetaLabel = new javax.swing.JLabel();
+        NombreCarpetaTextField = new javax.swing.JTextField();
+        CrearCarpetaButton = new javax.swing.JButton();
         CrearArchivoFrame = new javax.swing.JDialog();
         NombreArchivoLabel = new javax.swing.JLabel();
         NombreArchivoTextField = new javax.swing.JTextField();
@@ -57,9 +57,14 @@ public class GoogleUndead extends javax.swing.JFrame {
         AgregarCarpeta = new javax.swing.JMenuItem();
         AgregarArchivo = new javax.swing.JMenuItem();
 
-        NombreCarpetaLabel1.setText("Nombre de la Carpeta");
+        NombreCarpetaLabel.setText("Nombre de la Carpeta");
 
-        CrearCarpetaButton1.setText("Crear Carpeta");
+        CrearCarpetaButton.setText("Crear Carpeta");
+        CrearCarpetaButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearCarpetaButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CrearCarpetaFrameLayout = new javax.swing.GroupLayout(CrearCarpetaFrame.getContentPane());
         CrearCarpetaFrame.getContentPane().setLayout(CrearCarpetaFrameLayout);
@@ -68,21 +73,21 @@ public class GoogleUndead extends javax.swing.JFrame {
             .addGroup(CrearCarpetaFrameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CrearCarpetaButton1)
+                    .addComponent(CrearCarpetaButton)
                     .addGroup(CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NombreCarpetaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NombreCarpetaLabel1)))
+                        .addComponent(NombreCarpetaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NombreCarpetaLabel)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         CrearCarpetaFrameLayout.setVerticalGroup(
             CrearCarpetaFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearCarpetaFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(NombreCarpetaLabel1)
+                .addComponent(NombreCarpetaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NombreCarpetaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NombreCarpetaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(CrearCarpetaButton1)
+                .addComponent(CrearCarpetaButton)
                 .addContainerGap())
         );
 
@@ -281,6 +286,11 @@ public class GoogleUndead extends javax.swing.JFrame {
         CrearArchivoFrame.setVisible(true);
     }//GEN-LAST:event_AgregarArchivoActionPerformed
 
+    private void CrearCarpetaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCarpetaButtonMouseClicked
+//        String Link
+//        Carpeta file = new Carpeta(NombreCarpetaTextField.getText(), Link, Carpetas, Archivos);
+    }//GEN-LAST:event_CrearCarpetaButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -323,7 +333,7 @@ public class GoogleUndead extends javax.swing.JFrame {
     private javax.swing.JMenu Archivos;
     private javax.swing.JButton CrearArchivoButton;
     private javax.swing.JDialog CrearArchivoFrame;
-    private javax.swing.JButton CrearCarpetaButton1;
+    private javax.swing.JButton CrearCarpetaButton;
     private javax.swing.JDialog CrearCarpetaFrame;
     private javax.swing.JMenuItem Destacados;
     private javax.swing.JComboBox<String> ExtensionComboBox;
@@ -336,8 +346,8 @@ public class GoogleUndead extends javax.swing.JFrame {
     private javax.swing.JMenuItem MiUnidad;
     private javax.swing.JLabel NombreArchivoLabel;
     private javax.swing.JTextField NombreArchivoTextField;
-    private javax.swing.JLabel NombreCarpetaLabel1;
-    private javax.swing.JTextField NombreCarpetaTextField1;
+    private javax.swing.JLabel NombreCarpetaLabel;
+    private javax.swing.JTextField NombreCarpetaTextField;
     private javax.swing.JMenuItem Papelera;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
