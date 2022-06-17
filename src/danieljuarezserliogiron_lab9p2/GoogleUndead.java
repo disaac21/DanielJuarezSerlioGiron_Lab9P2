@@ -5,6 +5,8 @@
  */
 package danieljuarezserliogiron_lab9p2;
 
+import java.util.Random;
+
 /**
  *
  * @author danie
@@ -14,6 +16,8 @@ public class GoogleUndead extends javax.swing.JFrame {
     /**
      * Creates new form GoogleUndead
      */
+    static Random random = new Random();
+
     public GoogleUndead() {
         initComponents();
 
@@ -287,7 +291,14 @@ public class GoogleUndead extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarArchivoActionPerformed
 
     private void CrearCarpetaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCarpetaButtonMouseClicked
-//        String Link
+        String Link = "dive.google.com/" + NombreCarpetaTextField.getText() + "/";
+        int cont = 0;
+        while (cont <= 5) {
+            int numero = 65 + random.nextInt(57);
+            Link = Link + (char)numero;
+            cont++;
+        }
+        System.out.println(Link);
 //        Carpeta file = new Carpeta(NombreCarpetaTextField.getText(), Link, Carpetas, Archivos);
 
     }//GEN-LAST:event_CrearCarpetaButtonMouseClicked
