@@ -404,10 +404,11 @@ public class GoogleUndead extends javax.swing.JFrame {
             pertenece = a.isPertenece();
             
             db.query.execute("INSERT INTO Archivos"
-                    + " (Nombre,Fecha de creacion,Pertenece a una carpeta,Peso)"
+                    + " (Nombre,Fecha_de_creacion,Pertenece_a_una_carpeta,Peso)"
                     + " VALUES ('" + nombre + "', '" + fecha_creacion + "', '" + pertenece + "', '" + peso + "')");
             //+ " VALUES ('" + c + "', '" + n + "')");
             db.commit();
+            System.out.println("fin");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
