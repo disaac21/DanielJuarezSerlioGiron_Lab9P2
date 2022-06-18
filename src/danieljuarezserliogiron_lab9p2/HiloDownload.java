@@ -63,11 +63,17 @@ public class HiloDownload {
     
     public void run(){
         
+        while (start) {            
+            int cont = PesoArchivo / 10;
+            int files = 
+            try {
+                Thread.sleep(cont*1000);
+            } catch (Exception e) {
+            }
+        }
+        
     }
     
 }
 
-//            try {
-//                Thread.sleep(cont*1000);
-//            } catch (Exception e) {
-//            }
+//            
