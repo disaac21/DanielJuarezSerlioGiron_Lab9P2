@@ -8,6 +8,7 @@ public class HiloDownload {
     public JProgressBar BarraCarpeta;
     public int PesoArchivo;
     public int ArchivosCarpeta;
+    public boolean start;
 
     public HiloDownload() {
     }
