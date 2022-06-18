@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -484,4 +485,8 @@ public class GoogleUndead extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar2;
     // End of variables declaration//GEN-END:variables
     String Opcion;
+    public ArrayList <Carpeta> MiUnidadArray;
+    public ArrayList <Carpeta> DestacadosArray;
+    public ArrayList <Carpeta> PapeleraArray;
+    
 }
